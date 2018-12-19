@@ -11,7 +11,7 @@ defmodule GsPipe.Pipeline.Worker do
   end
 
   def init(subscription_options) do
-    Logger.debug(fn -> "#{inspect(self())}: Worker started." end)
+    Logger.debug(fn -> "#{inspect(self())}: #{__MODULE__} started." end)
     {:producer_consumer, @dummy_state, subscription_options}
   end
 
@@ -23,7 +23,7 @@ defmodule GsPipe.Pipeline.Worker do
   # PRIVATE
 
   defp process_task(task) do
-    Logger.debug(fn -> "#{inspect self()}: Consume Task #{inspect task}" end)
+    Logger.debug(fn -> "#{inspect self()}: Consuming Task #{inspect task}" end)
     task
   end
 end

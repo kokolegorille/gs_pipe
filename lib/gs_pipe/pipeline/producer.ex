@@ -13,7 +13,7 @@ defmodule GsPipe.Pipeline.Producer do
   end
 
   def init(_) do
-    Logger.debug(fn -> "#{inspect(self())}: Starter started." end)
+    Logger.debug(fn -> "#{inspect(self())}: #{__MODULE__} started." end)
     {:producer, %{queue: Queue, pending: 0}}
   end
 

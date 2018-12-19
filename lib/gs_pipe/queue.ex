@@ -40,7 +40,7 @@ defmodule GsPipe.Queue do
 
   @impl GenServer
   def init(_) do
-    Logger.debug(fn -> "#{inspect(self())}: Queue worker started." end)
+    Logger.debug(fn -> "#{inspect(self())}: #{@name} started." end)
 
     :ets.new(@name, [:named_table, :public, write_concurrency: true])
     :ets.insert(@name, {@key, :queue.new})

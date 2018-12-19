@@ -11,7 +11,7 @@ defmodule GsPipe.Pipeline.Notifier do
   end
 
   def init(subscription_options) do
-    Logger.debug(fn -> "#{inspect(self())}: Notifier started." end)
+    Logger.debug(fn -> "#{inspect(self())}: #{__MODULE__} started." end)
     {:consumer, @dummy_state, subscription_options}
   end
 
