@@ -22,3 +22,5 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 gs_pipe-*.tar
 
+.DS_Store
+.elixir_ls/
